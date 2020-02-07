@@ -1,0 +1,162 @@
+
+.nav-bar-wrapper {
+    background-color: white;
+    font-size: 0.9rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: $teal;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px -2px rgba(0,0,0,.8);
+
+    .logo {
+        display: flex;
+        align-items: center;
+        margin-left: 4px;
+        height: 100%;
+
+        .openbtn {
+            outline: none;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            background-color: transparent;
+            height: 100%;
+            border: 0px;
+            border-bottom: 5px solid transparent;
+            transition: 0.5 ease-in-out;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-family: sans-serif;
+            font-weight: 600;
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: 10px;
+
+            color: $teal;
+            text-decoration: none;
+            &:hover {
+                color: teal;
+                border-bottom: 5px solid teal;
+            }
+            .side-bar-bars {
+                color: transparent;
+
+            }
+
+            .side-bar-button-text {
+                margin-left: -10px;
+                padding-top: 2px;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .nav-links-wrapper {
+        height: 100%;
+        width: 20vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .nav-link-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            border-bottom: 5px solid transparent;
+            transition: 0.5 ease-in-out;
+        
+            margin-right: 20px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-family: sans-serif;
+            font-weight: 600;
+        
+            .nav-link-active {
+                border-bottom: 5px solid black;
+                padding: 4px
+            }
+        
+            .nav-link-btn {
+                height: 100%;
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                height: 100%;
+                color: $teal;
+                text-decoration: none;
+                border-bottom: 5px solid transparent;
+                &:hover {
+                    color: teal;
+                    border-bottom: 5px solid teal;
+                }
+                .nav-link-text {
+                    padding-top: 6px;
+                }
+                
+            }
+        
+            
+        } 
+    }
+    
+
+    .login {
+        margin-right: 4px;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-bar-wrapper {
+        .logo {
+            .openbtn {
+                width: 20px;
+                border: 0;
+                border-bottom: 5px solid transparent;
+
+                .side-bar-bars {
+                    text-decoration: none;
+                    border: 0;
+                    height: 100%;
+                    margin-left: 30px;
+                    margin-top: 2px;
+                    margin-bottom: 8px;
+                    color: $teal;
+                    font-size: larger;
+                    margin-right: 2px;
+                    border-bottom: 5px solid transparent;
+
+                    &:hover {
+                        color: teal;
+                        border-bottom: 5px solid transparent;
+                    }
+                }
+
+                .side-bar-button-text {
+                    visibility: hidden;
+                    padding-top: 2px;
+                    height: 100%;
+                    width: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    
+                }
+                &:hover {
+                    color: transparent;
+                    border-bottom: 5px solid transparent;
+                }
+            }
+        }
+    }
+}

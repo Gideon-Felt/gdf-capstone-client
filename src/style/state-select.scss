@@ -1,0 +1,19 @@
+
+.state-toggle-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .state-selector-wrapper {
+        align-self: flex-start;
+        .state-toggle.react-toggle--checked .react-toggle-track  {
+            padding-left: 0;
+            background-color: $teal;
+        }
+    }
+}
+
+.state-toggle-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
