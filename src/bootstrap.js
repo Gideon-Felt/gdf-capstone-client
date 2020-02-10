@@ -17,14 +17,29 @@ import "./style/main.scss";
 function Main() { 
   console.log(process.env)
   Icons()
+  const [ cachedData, setCachedData ] = useState([])
+  // potentialy just combine both sources using fetch to a single state array here.
+  const [ rdpData, setRdpData ] = useState([])
+  const [ rdpAppraisalData, setAppraisalData ] = useState([])
   const [ activeStates, setActiveStates ] = useState(stateList)
   const [ currentStyle, setCurrentStlye ] = useState("mapaGrisaStyle")
-  const [sideBarStyle, setSideBarStyle] = useState({width: "0", marginLeft: "0"})
-  const [mapSpaceStyle, setMapSpaceStyle] = useState({width: "100vw", marginLeft: "0"})
+  const [ sideBarStyle, setSideBarStyle] = useState({width: "0", marginLeft: "0"})
+  const [ mapSpaceStyle, setMapSpaceStyle] = useState({width: "100vw", marginLeft: "0"})
   const [ dbSource, setDbSource ] = useState(process.env.REACT_APP_MY_API_RDPS)
 
   const routes = {
-    "/": () => <App mapStyle={currentStyle} activeStates={activeStates} dbSource={dbSource}/>
+    "/": () => <App
+    mapStyle={currentStyle}
+    activeStates={activeStates}
+    dbSource={dbSource}
+    handleDataCache={handleDataCache}
+    cachedData={cachedData}
+    rdpData={rdpData}
+    rdpAppraisalData={rdpAppraisalData}
+    handleRdpSourceLoad={handleRdpSourceLoad}
+    handleApprSourceLoad={handleApprSourceLoad}
+    handleDbSourceChange={handleDbSourceChange}
+    />
   }
 
   const handleMapStyleChange = event => {
@@ -40,6 +55,20 @@ function Main() {
   const handleDbSourceChange = url => {
     setDbSource(url)
   }
+
+  const handleDataCache = data => {
+    setCachedData(data)
+  }
+
+  const handleRdpSourceLoad = data => {
+    setRdpData(data)
+  }
+
+  const handleApprSourceLoad = data => {
+    setAppraisalData(data)
+  }
+
+
 
 
 
